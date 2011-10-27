@@ -36,7 +36,7 @@ function validate(form)
 	var postage;
 	var srcState = form.ddlSrcState.value;
 	var dstState = form.ddlDstState.value;
-	
+	alert(srcState);
 	// If you want to write your result or any errors to the page
 	// You'll need to use the getElementById method:
 	document.getElementById("lblPostage").innerHTML = 500; // Set postage to 500
