@@ -11,8 +11,10 @@ function validate(form)
 	// To access the value of a form input, we do form.inputname.value
 	// For example, to check if the first name is empty we do:
 	
-	if (form.txtFirstName.value == "")
-		alert("You left the first name empty!"); // Alert the user that they left the first name empty
+	if (form.txtFirstName.value == ""||form.txtLastName.value == ""||form.txtSrcStreet.value == ""||form.txtSrcCity.value == ""||form.txtSrcZip.value == ""||form.txtDstStreet.value == ""||form.txtDstCity.value == ""||form.txtDstZip.value == ""||form.txtWeight.value == "") {
+		//alert("You left the first name empty!"); // Alert the user that they left the first name empty
+		document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	}
 	
 	// You'll also need to check if their zip code is valid. You should use regular expresions to do this.
 	// Be sure to format your regex properly so that it only allows valid, 5-digit zip codes
@@ -26,6 +28,10 @@ function validate(form)
 	// You'll need to convert the weight from your form into a number
 	// and check if user input a number properly
     // If everything looks okay, calculate postage!
+	
+	var postage;
+	var srcState = form.ddlSrcState.value;
+	var dstState = form.ddlDstState.value;
 	
 	// If you want to write your result or any errors to the page
 	// You'll need to use the getElementById method:
