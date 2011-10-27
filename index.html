@@ -1,162 +1,75 @@
-<html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<title>Postage Calculator</title>
-<script language="javascript" type="text/javascript" src="validation.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="js/libs/modernizr-2.0.min.js"></script>
+	<script src="js/libs/respond.min.js"></script>
 </head>
 <body>
-<form method="post" action="PostageCalculator.html">
-<table align="center" width="500px">
-    <tr>
-        <td align="center" colspan="2"><h2>Simple Postage Calculator</h2></td>
-    </tr>
-	<tr>
-		<td style="width: 120px">First Name:</td>
-		<td style="width: 180px"><input type="text" name="txtFirstName" /></td>
-	</tr>
-	
-	<tr><td colspan="2">&nbsp</td></tr>
-	
-    <tr>
-        <td colspan="2">Shipping from:</td>
-    </tr>
-	<tr>
-	    <td>Zip code:</td>
-	    <td><input type="text" name="txtSrcZipCode" /></td>
-	</tr>
-	<tr>
-	    <td>State:</td>
-	    <td>
-	    <select name="ddlSrcState">
-	        <option value="" selected="selected"></option>
-	        <option value="AL">Alabama</option>
-	        <option value="AK">Alaska</option>
-	        <option value="AZ">Arizona</option>
-	        <option value="AR">Arkansas</option>
-	        <option value="CA">California</option>
-	        <option value="CO">Colorado</option>
-	        <option value="CT">Connecticut</option>
-	        <option value="DE">Delaware</option>
-	        <option value="FL">Florida</option>
-	        <option value="GA">Georgia</option>
-	        <option value="HI">Hawaii</option>
-	        <option value="ID">Idaho</option>
-	        <option value="IL">Illinois</option>
-	        <option value="IN">Indiana</option>
-	        <option value="IA">Iowa</option>
-	        <option value="KS">Kansas</option>
-	        <option value="KY">Kentucky</option>
-	        <option value="LA">Louisiana</option>
-	        <option value="ME">Maine</option>
-	        <option value="MD">Maryland</option>
-	        <option value="MA">Marssachusetts</option>
-	        <option value="MI">Michigan</option>
-	        <option value="MN">Minnesota</option>
-	        <option value="MS">Mississippi</option>
-	        <option value="MO">Missouri</option>
-	        <option value="MT">Montana</option>
-	        <option value="NE">Nebraska</option>
-	        <option value="NV">Nevada</option>
-	        <option value="NH">New Hampshire</option>
-	        <option value="NJ">New Jersey</option>
-	        <option value="NM">New Mexico</option>
-	        <option value="NY">New York</option>
-	        <option value="NC">North Carolina</option>
-	        <option value="ND">North Dakota</option>
-	        <option value="OH">Ohio</option>
-	        <option value="OK">Oklahoma</option>
-	        <option value="OR">Oregon</option>
-	        <option value="PA">Pennsylvania</option>
-	        <option value="RI">Rhode Island</option>
-	        <option value="SC">South Carolina</option>
-	        <option value="TN">Tennessee</option>
-	        <option value="TX">Texas</option>
-	        <option value="UT">Utah</option>
-	        <option value="VT">Vermont</option>
-	        <option value="VA">Virginia</option>
-	        <option value="WA">Washington</option>
-	        <option value="WV">West Virginia</option>
-	        <option value="WI">Wisconsin</option>
-	        <option value="WY">Wyoming</option>
-	    </select>
-	    </td>
-	</tr>
-	
-	<tr><td>&nbsp</td></tr>
-	
-    <tr>
-        <td colspan="2">Shipping to:</td>
-    </tr>
-	<tr>
-	    <td>State:</td>
-	    <td>
-	    <select name="ddlDstState">
-	        <option value="" selected="selected"></option>
-	        <option value="AL">Alabama</option>
-	        <option value="AK">Alaska</option>
-	        <option value="AZ">Arizona</option>
-	        <option value="AR">Arkansas</option>
-	        <option value="CA">California</option>
-	        <option value="CO">Colorado</option>
-	        <option value="CT">Connecticut</option>
-	        <option value="DE">Delaware</option>
-	        <option value="FL">Florida</option>
-	        <option value="GA">Georgia</option>
-	        <option value="HI">Hawaii</option>
-	        <option value="ID">Idaho</option>
-	        <option value="IL">Illinois</option>
-	        <option value="IN">Indiana</option>
-	        <option value="IA">Iowa</option>
-	        <option value="KS">Kansas</option>
-	        <option value="KY">Kentucky</option>
-	        <option value="LA">Louisiana</option>
-	        <option value="ME">Maine</option>
-	        <option value="MD">Maryland</option>
-	        <option value="MA">Marssachusetts</option>
-	        <option value="MI">Michigan</option>
-	        <option value="MN">Minnesota</option>
-	        <option value="MS">Mississippi</option>
-	        <option value="MO">Missouri</option>
-	        <option value="MT">Montana</option>
-	        <option value="NE">Nebraska</option>
-	        <option value="NV">Nevada</option>
-	        <option value="NH">New Hampshire</option>
-	        <option value="NJ">New Jersey</option>
-	        <option value="NM">New Mexico</option>
-	        <option value="NY">New York</option>
-	        <option value="NC">North Carolina</option>
-	        <option value="ND">North Dakota</option>
-	        <option value="OH">Ohio</option>
-	        <option value="OK">Oklahoma</option>
-	        <option value="OR">Oregon</option>
-	        <option value="PA">Pennsylvania</option>
-	        <option value="RI">Rhode Island</option>
-	        <option value="SC">South Carolina</option>
-	        <option value="TN">Tennessee</option>
-	        <option value="TX">Texas</option>
-	        <option value="UT">Utah</option>
-	        <option value="VT">Vermont</option>
-	        <option value="VA">Virginia</option>
-	        <option value="WA">Washington</option>
-	        <option value="WV">West Virginia</option>
-	        <option value="WI">Wisconsin</option>
-	        <option value="WY">Wyoming</option>
-	    </select>
-	    </td>
-	</tr>
-	
-	<tr><td>&nbsp;</td></tr>
-	
-	<tr>
-	    <td>Postage:</td>
-	    <td><div id="lblPostage"></div></td>
-	</tr>
-	
-	<tr>
-	    <td style="width: 150px"><input type="button" name="btnCalcPostage" value="Calculate postage" onClick="validate(this.form)" /></td>
-	    <td style="width: 150px"><div id="lblErrMsg"></div></td>
-	</tr>
-</table>
-</form>
+	<div id="header-container">
+		<header class="wrapper">
+			<h1 id="title">Initializr</h1>
+			<nav>
+				<ul>
+					<li><a href="#">Some</a></li>
+					<li><a href="#">navigation</a></li>
+					<li><a href="#">links</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<div id="main" class="wrapper">
+		<aside>
+			<h3>Something aside</h3>
+		</aside>
+		<article>
+			<header>
+				<h2>Your article heading</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+			</header>
+			<h3>A smaller heading</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>	
+			<h3>A smaller heading</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
+			<footer>
+			<h3>About the author</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+			</footer>
+		</article>
+	</div>
+	<div id="footer-container">
+		<footer class="wrapper">
+			<h3>A nice footer</h3>
+		</footer>
+	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+<script src="js/script.js"></script>
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
 
 </body>
 </html>
