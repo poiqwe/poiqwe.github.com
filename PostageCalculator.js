@@ -16,6 +16,10 @@ function validate(form)
 		document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
 	}
 	
+	if (isNaN(form.txtWeight.value) || form.txtWeight.value < 0) {
+		document.getElementById("lblErrMsg").innerHTML += "Non-negative numbers only<br/>";
+	}
+	
 	// You'll also need to check if their zip code is valid. You should use regular expresions to do this.
 	// Be sure to format your regex properly so that it only allows valid, 5-digit zip codes
 	// Below is an example of how to use regular expressions
