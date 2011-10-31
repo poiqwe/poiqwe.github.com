@@ -10,8 +10,16 @@ function validate(form) {
 	// To access the value of a form input, we do form.inputname.value
 	// For example, to check if the first name is empty we do:
 	
-	if (form.txtFirstName.value == ""||form.txtLastName.value == ""||form.txtSrcStreet.value == ""||form.txtSrcCity.value == ""||form.txtSrcZip.value == ""||form.txtDstStreet.value == ""||form.txtDstCity.value == ""||form.txtDstZip.value == ""||form.txtWeight.value == "") {
-		//alert("You left the first name empty!"); // Alert the user that they left the first name empty
+	if (form.txtFirstName.value == "") document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtLastName.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtSrcStreet.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtSrcCity.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtSrcZipCode.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtDstStreet.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtDstCity.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtDstZipCode.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
+	if (form.txtWeight.value == "") {
+		
 		document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
 	}
 	
@@ -42,9 +50,9 @@ function validate(form) {
 		postage = form.txtWeight.value * 3.0;
 	}
 	
-	alert(Math.round(postage*Math.pow(10,2))/Math.pow(10,2));
+	postage = (Math.round(postage*Math.pow(10,2))/Math.pow(10,2));
 	// If you want to write your result or any errors to the page
 	// You'll need to use the getElementById method:
-	document.getElementById("lblPostage").innerHTML = 500; // Set postage to 500	
+	document.getElementById("lblPostage").innerHTML = postage;
 
 }
