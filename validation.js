@@ -33,7 +33,7 @@ function validate(form) {
 	var zipRegex=/\d{5}/;
 	
 	if (form.txtSrcZipCode.value.search(zipRegex) == -1 || form.txtSrcZipCode.value.length != 5) {
-		document.getElementById("lblErrMsg").innerHTML += "Invalid zip code<br/>";
+		document.getElementById("lblErrMsg").innerHTML += "Invalid zip code<br/>Please enter 5 digit zip";
 	}
 	// Also, make sure their weight isn't zero or negative!
 	// You'll need to convert the weight from your form into a number
