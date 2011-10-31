@@ -10,15 +10,7 @@ function validate(form) {
 	// To access the value of a form input, we do form.inputname.value
 	// For example, to check if the first name is empty we do:
 	
-	if (form.txtFirstName.value == "") document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtLastName.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtSrcStreet.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtSrcCity.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtSrcZipCode.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtDstStreet.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtDstCity.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtDstZipCode.value == "")  document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
-	if (form.txtWeight.value == "") {
+	if (form.txtFirstName.value == "" || form.txtLastName.value == "" || form.txtSrcStreet.value == "" || form.txtSrcCity.value == "" || form.txtSrcZipCode.value == "" || form.txtDstStreet.value == "" || form.txtDstCity.value == "" \\ form.txtDstZipCode.value == "" || form.txtWeight.value == "") {
 		
 		document.getElementById("lblErrMsg").innerHTML += "One or more fields incomplete<br/>";
 	}
