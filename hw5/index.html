@@ -25,10 +25,16 @@
     document.getElementById("guessPercent").innerHTML = (corrects*100.0/attempts).toFixed(2);
   }
   
-  window.onload = function() {
-    document.getElementById("btnCheck").onclick = guess;
+  function reset() {
     attempts = 0;
     corrects = 0;
+    document.getElementById("guessRatio").innerHTML = "0 out of 0";
+    document.getElementById("guessPercent").innerHTML = "0";
+  }
+  
+  window.onload = function() {
+    document.getElementById("btnCheck").onclick = guess;
+    document.getElementById("btnReset").onclick = reset;
   }
   </script>
 </head>
@@ -49,5 +55,6 @@
 <hr />
 <p>You have guessed correctly <span id="guessRatio">0 out of 0 times</span>.</p>
 This means you were correct <span id="guessPercent">0</span>% of the time.</p>
+<input type="button" id="btnReset" value="Reset the Test" />
 </body>
 </html>
