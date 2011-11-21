@@ -4,39 +4,6 @@
   <meta charset="utf-8">
   <title>ESP Test</title>
   <script type="text/javascript">
-  //RDAVID
-  function guess() {
-    var shapes = ["heart", "star", "square", "moon", "diamond", "triangle"]
-    var correctAnswer = Math.floor(Math.random()*6);
-    document.getElementById("card").src = shapes[correctAnswer]+".png";
-    
-    var guess = parseInt(document.getElementById("txtGuess").value);
-    if (guess===correctAnswer) {
-      corrects++;
-      alert("Correct!");
-    }
-    else {
-      alert("Sorry! The correct shape was "+shapes[correctAnswer]);
-    }
-    attempts++;
-    
-    document.getElementById("card").src = "back.png";
-    
-    document.getElementById("guessRatio").innerHTML = corrects + " out of " +attempts;
-    document.getElementById("guessPercent").innerHTML = (corrects*100.0/attempts).toFixed(2);
-  }
-  
-  function reset() {
-    attempts = 0;
-    corrects = 0;
-    document.getElementById("guessRatio").innerHTML = "0 out of 0";
-    document.getElementById("guessPercent").innerHTML = "0";
-  }
-  
-  window.onload = function() {
-    document.getElementById("btnCheck").onclick = guess;
-    document.getElementById("btnReset").onclick = reset;
-  }
   </script>
 </head>
 <body>
