@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ESP Test</title>
+  <script type="text/javascript">
+  function guess() {
+    var shapes = ["heart", "star", "square", "moon", "diamond", "triangle"]
+    var correctAnswer = Math.floor(Math.random()*6);
+    document.getElementById("card").src = shapes[correctAnswer]+".png";
+    
+    var guess = parseInt(document.getElementById("txtGuess").value);
+    if (guess===correctAnswer) {
+      corrects++;
+      alert("Correct!");
+    }
+    else {
+      alert("Sorry! The correct shape was "+shapes[correctAnswer]);
+    }
+    attempts++;
+    
+    document.getElementById("card").src = "back.png";
+    
+    document.getElementById("guessRatio").innerHTML = corrects + " out of " +attempts;
+    document.getElementById("guessPercent").innerHTML = (corrects*100.0/attempts).toFixed(2);
+  }
+  
+  window.onload = function() {
+    document.getElementById("btnCheck").onclick = guess;
+    attempts = 0;
+    corrects = 0;
+  }
+  </script>
+</head>
+<body>
+<p>Let's see if you have ESP. Try to predict the shape that's behind the card. It will be one of 6 shapes. Enter the number corresponding to your guess below and click the button to see if you have ESP.</p>
+<p>I'll keep track of the overall statistics and show you the number and percentage of correct guesses you've made.</p>
+<img src="back.png" id="card" height="200" width="200" />
+<ul style="list-style: none; padding: 0">
+  <li>If your guess is a <strong>heart</strong>, input the number 0</li>
+  <li>If your guess is a <strong>star</strong>, input the number 1</li>
+  <li>If your guess is a <strong>square</strong>, input the number 2</li>
+  <li>If your guess is a <strong>moon</strong>, input the number 3</li>
+  <li>If your guess is a <strong>diamond</strong>, input the number 4</li>
+  <li>If your guess is a <strong>triangle</strong>, input the number 5</li>
+</ul>
+<p>What's your guess? <input type="text" size="10" id="txtGuess" value="0"/></p>
+<input type="button" id="btnCheck" value="Do I have ESP?" />
+<hr />
+<p>You have guessed correctly <span id="guessRatio">0 out of 0 times</span>.</p>
+This means you were correct <span id="guessPercent">0</span>% of the time.</p>
+</body>
+</html>
