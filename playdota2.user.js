@@ -287,7 +287,7 @@ function replaceImages() {
         tooltip.style.position="absolute";
         tooltip.innerHTML = "";
         
-        if (cat=="hero" && !type.match(/skill/)) { // skills also will have cat = hero; no tooltip for skills for now;
+        if (cat=="hero") { // skills also will have cat = hero; no tooltip for skills for now;
             var xmlString = loadXMLString(HeroNames[key]);
             var hName = xmlString.getElementsByTagName('name')[0].childNodes[0].nodeValue;
             var hName2 = xmlString.getElementsByTagName('class')[0].childNodes[0].nodeValue;
