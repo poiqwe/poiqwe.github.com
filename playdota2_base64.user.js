@@ -92,7 +92,7 @@ function replaceImages() {
             classIcon.style.float="left";
             classIcon.style.marginTop="8px";
             tooltip.appendChild(classIcon);
-            tooltip.innerHTML += "<div style='float:left'><strong>"+hName+"</strong><br />"+hName2+"</div>";
+            tooltip.innerHTML += "<div style='float:left'><strong>"+hName2+"</strong><br />"+hName+"</div>";
         }
         
         if (cat=="items" && ItemNames[key] != null) {
