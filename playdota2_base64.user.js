@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name           	playDotA to Dota 2 conversion
-// @include        	http://*playdota*
+// @include        	http://*.playdota.*
+// @include         http://poiqwe.github.com/*
 // @description		Replaces most DotA icons (hero,item,skill) on playdota.com with Dota 2 icons.
 // @author			scnr, ok_fair_enough / poiqwe
 // @version			1.0
