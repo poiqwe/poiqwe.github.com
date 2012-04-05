@@ -105,6 +105,6 @@ var heroes = {
   135: { imgur: "", name: "Rubick", name2: "Grand Magus", hclass: 3, strength: "19 + 1.5", agility: "14 + 1.6", intelligence: "27 + 2.4" },
   136: { imgur: "", name: "Rizzrak", name2: "Goblin Shredder", hclass: 1, strength: "22 + 2.4", agility: "16 + 1.3", intelligence: "21 + 1.8" },
   137: { imgur: "", name: "Xin", name2: "Ember Spirit", hclass: 2, strength: "19 + 2", agility: "22 + 1.8", intelligence: "20 + 1.8" },
-  138: { imgur: "", name: "Tresdin", name2: "Legion Commander", hclass: 1, strength: "26 + 2.6", agility: "18 + 1.7", intelligence: "20 + 2.2' },
+  138: { imgur: "", name: "Tresdin", name2: "Legion Commander", hclass: 1, strength: "26 + 2.6", agility: "18 + 1.7", intelligence: "20 + 2.2" },
   139: { imgur: "", name: "Dragonus", name2: "Skywrath Mage", hclass: 3, strength: "19 + 1.5", agility: "18 + 0.8", intelligence: "27 + 3.2" }
 };
