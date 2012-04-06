@@ -1,7 +1,7 @@
 (function(){
     var hero = document.createElement('script'), item = document.createElement('script');
     hero.src = 'http://poiqwe.github.com/playdota2/hero.js';
-    item.src = 'http://poiqwe.github.com/playdota2/item.js';
+    item.src = 'http://poiqwe.github.com/playdota2/items.js';
     document.getElementsByTagName('head')[0].appendChild(hero);
     document.getElementsByTagName('head')[0].appendChild(item);
 })();
@@ -34,7 +34,7 @@ function replaceImages() {
 		
 		img.style.width = sizes.hasOwnProperty(type) ? sizes[type] : img.style.width;
 		img.style.height = sizes.hasOwnProperty(type) ? sizes[type] : img.style.height;
-		if (!!unsafeWindow[category][key])
+		if (!!unsafeWindow[category][key] && !!unsafeWindow[category][key].imgur)
 			img.src = IMGUR + unsafeWindow[category][key].imgur + EXTENSION;
 	}
     
