@@ -6,10 +6,23 @@
     // document.getElementsByTagName('head')[0].appendChild(item);
 // })();
 
-unsafeWindow.addEventListener("load",replaceImages,true);
+unsafeWindow.addEventListener("load",init,true);
+
+function init() {
+	
+	replaceImages();
+	if (/http:\/\/www\.playdota\.com\/(?:heroes|items)/.test(document.location.href)) {
+		var list = document.querySelectorAll('.hdleft a, .ileft a');
+		
+		for (var i=list.length;i--;) {
+			list[i].addEventListener("mouseover",replaceImages);
+		}
+	}
+}
 
 function replaceImages() {
-    var re = /http:\/\/.*?\.playdota.com\/(img\/)?(hero|items)\/(\d+)\/(icon|thumb|skill-\d)\.((?:[a-z\d]{3}))(?![\w\.])/,
+	console.log("replacing images...");
+    var re = /http:\/\/.*?\.playdota.com\/(img\/)?(hero|items)\/(\d+)\/\/?(icon|thumb|skill-\d)\.((?:[a-zA-Z\d]{3}))(?![\w\.])/,
     IMGUR = "http://i.imgur.com/", BITLY = "http://bit.ly/dota2-", GITHUB = "http://poiqwe.github.com/playdota2/skills/", EXTENSION = ".png",
 	list,img,src,
 	category,key,type,
@@ -19,7 +32,7 @@ function replaceImages() {
 	};
 	
 	list = document.querySelectorAll('img[src*="playdota.com"]');
-	
+	var count = 0;
 	for (var i=list.length;i--;) {
 		img = list[i];
 		src = img.src;
@@ -35,12 +48,18 @@ function replaceImages() {
 		img.width = sizes.hasOwnProperty(type) ? sizes[type] : img.width;
 		img.height = sizes.hasOwnProperty(type) ? sizes[type] : img.height;
 		if (data.hasOwnProperty(category)) {
-			if (type.match(/skill-\d+/) != null)
-				img.src = GITHUB + key + "/" + type + EXTENSION;
-			else if (!!data[category][key] && !!data[category][key].imgur)
-				img.src = IMGUR + data[category][key].imgur + EXTENSION;
+			if (!!data[category][key] && !!data[category][key].imgur) {
+				if (type.match(/skill-\d+/) != null) {
+					img.src = GITHUB + key + "/" + type + EXTENSION;
+					count++;
+				} else {
+					img.src = IMGUR + data[category][key].imgur + EXTENSION;
+					count++;
+				}
+			}
 		}
 	}
+	console.log("replaced "+count);
 
 }
 
@@ -289,3 +308,4 @@ var data = {
 
 data.items[8] = data.items[770];
 data.items[54] = data.items[773];
+data.item[112] = data.items[772];
