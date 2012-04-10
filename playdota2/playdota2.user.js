@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name           	playdota2
+// @include        	http://*.playdota.*
+// @description		replaces dota 1 icons and thumbnails with dota 2 versions and includes tooltips. credits to reddit user scnr for the idea and also the images used.
+// @version         1.2.0
+// ==/UserScript==
+
 // (function(){
     // var hero = document.createElement('script'), item = document.createElement('script');
     // hero.src = 'http://poiqwe.github.com/playdota2/hero.js';
@@ -16,23 +23,24 @@ function init() {
 		
 		for (var i=list.length;i--;) {
 			list[i].addEventListener("mouseover",replaceImages);
+			list[i].addEventListener("click",replaceImages);
 		}
 	}
 }
 
 function replaceImages() {
-	console.log("replacing images...");
-    var re = /http:\/\/.*?\.playdota.com\/(img\/)?(hero|items)\/(\d+)\/\/?(icon|thumb|skill-\d)\.((?:[a-zA-Z\d]{3}))(?![\w\.])/,
-    IMGUR = "http://i.imgur.com/", BITLY = "http://bit.ly/dota2-", GITHUB = "http://poiqwe.github.com/playdota2/skills/", EXTENSION = ".png",
-	list,img,src,
-	category,key,type,
-	sizes = {
-		thumb: 38,
-		icon: 64
-	};
+	
+	var re = /http:\/\/.*?\.playdota.com\/(img\/)?(hero|items)\/(\d+)\/\/?(icon|thumb|skill-\d)\.((?:[a-zA-Z\d]{3}))(?![\w\.])/,
+		IMGUR = "http://i.imgur.com/", BITLY = "http://bit.ly/dota2-", GITHUB = "http://poiqwe.github.com/playdota2/skills/", EXTENSION = ".png",
+		list,img,src,
+		category,key,type,
+		sizes = {
+			thumb: 38,
+			icon: 64
+		};
 	
 	list = document.querySelectorAll('img[src*="playdota.com"]');
-	var count = 0;
+	
 	for (var i=list.length;i--;) {
 		img = list[i];
 		src = img.src;
@@ -51,15 +59,12 @@ function replaceImages() {
 			if (!!data[category][key] && !!data[category][key].imgur) {
 				if (type.match(/skill-\d+/) != null) {
 					img.src = GITHUB + key + "/" + type + EXTENSION;
-					count++;
 				} else {
 					img.src = IMGUR + data[category][key].imgur + EXTENSION;
-					count++;
 				}
 			}
 		}
 	}
-	console.log("replaced "+count);
 
 }
 
