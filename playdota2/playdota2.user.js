@@ -2,7 +2,7 @@
 // @name           	playdota2
 // @include        	http://*.playdota.*
 // @description		replaces dota 1 icons and thumbnails with dota 2 versions and includes tooltips. credits to reddit user scnr for the idea and also the images used.
-// @version         1.2.0
+// @version         1.2.1
 // ==/UserScript==
 
 // (function(){
@@ -44,6 +44,7 @@ function replaceImages() {
 	for (var i=list.length;i--;) {
 		img = list[i];
 		src = img.src;
+		img.onerror = (function(i,s){return function(){i.src=s;};})(img,src);
 		
 		if (!re.test(src)) continue;
 		
