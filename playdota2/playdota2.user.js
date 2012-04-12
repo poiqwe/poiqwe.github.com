@@ -30,7 +30,7 @@ function init() {
 
 function replaceImages() {
 	
-	var re = /http:\/\/.*?\.playdota.com\/(img\/)?(hero|items)\/(\d+)\/\/?(icon|thumb|skill-\d)\.((?:[a-zA-Z\d]{3}))(?![\w\.])/,
+	var re = /playdota.com\/(?:img\/)?(hero|items)\/(\d+)\/+(icon|thumb|skill-\d)/,
 		IMGUR = "http://i.imgur.com/", BITLY = "http://bit.ly/dota2-", GITHUB = "http://poiqwe.github.com/playdota2/skills/", EXTENSION = ".png",
 		list,img,src,
 		category,key,type,
@@ -47,9 +47,9 @@ function replaceImages() {
 		
 		if (!re.test(src)) continue;
 		
-		category = RegExp.$2; // hero | items
-		key      = RegExp.$3; // integer
-		type  = RegExp.$4; // icon | thumb | skill-0
+		category = RegExp.$1; // hero | items
+		key      = RegExp.$2; // integer
+		type  = RegExp.$3; // icon | thumb | skill-0
 		
 		if (!!!parseInt(key)) continue;
 		
@@ -84,7 +84,7 @@ var data = {
 		 24: { imgur: "", bitly: "troll-warlord", name: "Jah\'rakal", name2: "Troll Warlord", hclass: 2, strength: "17 + 2.2", agility: "21 + 2.75", intelligence: "13 + 1" },
 		 25: { imgur: "uGR3N", bitly: "tidehunter", name: "Leviathan", name2: "Tidehunter", hclass: 1, strength: "22 + 3", agility: "15 + 1.5", intelligence: "16 + 1.7" },
 		 26: { imgur: "jZthc", bitly: "rhasta", name: "Rhasta", name2: "Shadow Shaman", hclass: 3, strength: "19 + 1.6", agility: "16 + 1.6", intelligence: "21 + 3" },
-		 27: { imgur: "CjI2R", bitly: "bane", name: "Atropos", name2: "Bane Elemental", hclass: 3, strength: "22 + 2.1", agility: "22 + 2.1", intelligence: "22 + 2.1" },
+		 27: { imgur: "thtFI", bitly: "bane", name: "Atropos", name2: "Bane Elemental", hclass: 3, strength: "22 + 2.1", agility: "22 + 2.1", intelligence: "22 + 2.1" },
 		 28: { imgur: "ajhHy", bitly: "necrolyte", name: "Rotund\'jere", name2: "Necrolyte", hclass: 3, strength: "16 + 2.0", agility: "15 + 1.7", intelligence: "22 + 2.5" },
 		 29: { imgur: "4ujli", bitly: "pudge", name: "Pudge", name2: "Butcher", hclass: 1, strength: "25 + 3.2", agility: "14 + 1.5", intelligence: "14 + 1.5" },
 		 32: { imgur: "EfqHy", bitly: "weaver", name: "Anub\'seran", name2: "Nerubian Weaver", hclass: 2, strength: "15 + 1.5", agility: "14 + 2.5", intelligence: "15 + 1.8" },
@@ -117,9 +117,9 @@ var data = {
 		 64: { imgur: "Rkqv4", bitly: "rikimaru", name: "Rikimaru", name2: "Stealth Assassin", hclass: 2, strength: "17 + 2", agility: "34 + 2.9", intelligence: "14 + 1.3" },
 		 65: { imgur: "SD5yE", bitly: "clockwerk", name: "Rattletrap", name2: "Clockwerk Goblin", hclass: 1, strength: "24 + 2.4", agility: "13 + 1.2", intelligence: "17 + 1.3" },
 		 66: { imgur: "WEHdr", bitly: "kunkka", name: "Kunkka", name2: "Admiral", hclass: 1, strength: "21 + 3", agility: "14 + 1.3", intelligence: "18 + 1.5" },
-		 67: { imgur: "", bitly: "sylla", name: "Syllabear", name2: "Lone Druid", hclass: 2, strength: "17 + 2.1", agility: "24 + 2.7", intelligence: "13 + 1.4" },
+		 67: { imgur: "HWwDC", bitly: "sylla", name: "Syllabear", name2: "Lone Druid", hclass: 2, strength: "17 + 2.1", agility: "24 + 2.7", intelligence: "13 + 1.4" },
 		 69: { imgur: "QYlg4", bitly: "lina", name: "Lina Inverse", name2: "Slayer", hclass: 3, strength: "18 + 1.5", agility: "16 + 1.5", intelligence: "27 + 3.2" },
-		 70: { imgur: "", bitly: "obsidian-destroyer", name: "Harbinger", name2: "Obsidian Destroyer", hclass: 3, strength: "19 + 1.85", agility: "24 + 2.0", intelligence: "26 + 3.3" },
+		 70: { imgur: "KpQgI", bitly: "obsidian-destroyer", name: "Harbinger", name2: "Obsidian Destroyer", hclass: 3, strength: "19 + 1.85", agility: "24 + 2.0", intelligence: "26 + 3.3" },
 		 71: { imgur: "Latly", bitly: "juggernaut", name: "Yurnero", name2: "Juggernaut", hclass: 2, strength: "20 + 1.9", agility: "20 + 2.85", intelligence: "14 + 1.4" },
 		 72: { imgur: "", bitly: "medusa", name: "Medusa", name2: "Gorgon", hclass: 2, strength: "14 + 1.65", agility: "20 + 2.5", intelligence: "19 + 1.85" },
 		 74: { imgur: "", bitly: "geomancer", name: "Meepo", name2: "Geomancer", hclass: 2, strength: "23 + 1.6", agility: "23 + 1.9", intelligence: "20 + 1.6" },
@@ -158,7 +158,7 @@ var data = {
 		112: { imgur: "SIn58", bitly: "lion", name: "Lion", name2: "Demon Witch", hclass: 3, strength: "16 + 1.7", agility: "15 + 1.5", intelligence: "22 + 3" },
 		113: { imgur: "", bitly: "visage", name: "Visage", name2: "Necro\'lic", hclass: 3, strength: "22 + 2.4", agility: "11 + 1.3", intelligence: "21 + 2.5" },
 		114: { imgur: "", bitly: "chaos-knight", name: "Nessaj", name2: "Chaos Knight", hclass: 1, strength: "20 + 2.9", agility: "14 + 2.1", intelligence: "16 + 1.2" },
-		115: { imgur: "", bitly: "lycanthrope", name: "Banehallow", name2: "Lycanthrope", hclass: 1, strength: "22 + 2.75", agility: "16 + 1.9", intelligence: "15 + 1.55" },
+		115: { imgur: "o7Ecj", bitly: "lycanthrope", name: "Banehallow", name2: "Lycanthrope", hclass: 1, strength: "22 + 2.75", agility: "16 + 1.9", intelligence: "15 + 1.55" },
 		116: { imgur: "", bitly: "tauren-chieftain", name: "Cairne Bloodhoof", name2: "Tauren Chieftain", hclass: 1, strength: "24 + 2.3", agility: "14 + 1.5", intelligence: "23 + 1.6" },
 		117: { imgur: "07dGg", bitly: "batrider", name: "Jin\'zakk", name2: "Batrider", hclass: 3, strength: "23 + 2.0", agility: "15 + 1.5", intelligence: "24 + 2.5" },
 		118: { imgur: "38RUl", bitly: "invoker", name: "Kael", name2: "Invoker", hclass: 3, strength: "19 + 1.7", agility: "20 + 1.9", intelligence: "22 + 2.5" },
@@ -170,7 +170,7 @@ var data = {
 		129: { imgur: "", bitly: "gyrocopter", name: "Aurel Vlaicu", name2: "Gyrocopter", hclass: 2, strength: "18 + 1.8", agility: "24 + 2.8", intelligence: "23 + 2.1" },
 		130: { imgur: "", bitly: "guardian-wisp", name: "Io", name2: "Guardian Wisp", hclass: 1, strength: "17 + 1.9", agility: "14 + 1.6", intelligence: "23 + 1.7" },
 		131: { imgur: "", bitly: "disruptor", name: "Thrall", name2: "Disruptor", hclass: 3, strength: "19 + 1.9", agility: "15 + 1.4", intelligence: "22 + 2.5" },
-		132: { imgur: "", bitly: "shadow-demon", name: "Eredar", name2: "Shadow Demon", hclass: 3, strength: "17 + 1.9", agility: "18 + 2.2", intelligence: "26 + 2.7" },
+		132: { imgur: "5gOvl", bitly: "shadow-demon", name: "Eredar", name2: "Shadow Demon", hclass: 3, strength: "17 + 1.9", agility: "18 + 2.2", intelligence: "26 + 2.7" },
 		133: { imgur: "", bitly: "phoenix", name: "Icarus", name2: "Phoenix", hclass: 1, strength: "19 + 2.9", agility: "12 + 1.3", intelligence: "18 + 1.8" },
 		134: { imgur: "", bitly: "tuskarr", name: "Ymir", name2: "Tuskarr", hclass: 1, strength: "23 + 2.3", agility: "23 + 2.1", intelligence: "18 + 1.7" },
 		135: { imgur: "", bitly: "grand-magus", name: "Rubick", name2: "Grand Magus", hclass: 3, strength: "19 + 1.5", agility: "14 + 1.6", intelligence: "27 + 2.4" },
