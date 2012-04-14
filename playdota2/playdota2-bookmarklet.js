@@ -1,22 +1,19 @@
 (function(unsafeWindow){
-	function loadScript(callback){
+	(function loadScript(callback){
 		var head = document.getElementsByTagName('head')[0],
 			data = document.createElement('script'),
 			loaded = false;
 		data.type = 'text/javascript';
 		data.src = 'http://poiqwe.github.com/playdota2/data.js';
-		data.onload = function() {
+		data.onload = data.onreadystatechange = function() {
 			if (!loaded && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-				loaded = true;
-				unsafeWindow.call(callback);
+				callback.call(unsafeWindow);
 				data.onload = null;
 				head.removeChild(data)
 			}
 		}
 		head.appendChild(data);
-	})();
-
-	unsafeWindow.addEventListener("load",init,true);
+	})(init);
 
 	function init() {
 		"use strict";
@@ -35,7 +32,7 @@
 	function replaceImages() {
 		"use strict";
 		
-		var re = /playdota.com\/(?:img\/)?(hero|items)\/(\d+)\/+(icon|thumb|skill-\d)/,
+		var re = /playdota.com\/(?:img\/)?(hero|items)\/(\d+)\/+(icon|thumb|skill-\d)/, regex = RegExp,
 			IMGUR = "http://i.imgur.com/", BITLY = "http://bit.ly/dota2-", GITHUB = "http://poiqwe.github.com/playdota2/skills/", EXTENSION = ".png",
 			list,img,src,
 			sizes = {
@@ -56,11 +53,11 @@
 			
 			if (/tooltip/.test(img.className) || !re.test(src)) continue;
 			
-			category = RegExp.$1; // hero | items
-			key = RegExp.$2; // integer
-			type  = RegExp.$3; // icon | thumb | skill-0
+			category = regex.$1; // hero | items
+			key = regex.$2; // integer
+			type  = regex.$3; // icon | thumb | skill-0
 			
-			if (!parseInt(key)) continue;
+			if (!parseInt(key,10)) continue;
 			
 			img.width = sizes.hasOwnProperty(type) ? sizes[type] : img.width;
 			img.height = sizes.hasOwnProperty(type) ? sizes[type] : img.height;
