@@ -5,17 +5,10 @@
 // @version         1.2.1
 // ==/UserScript==
 
-// (function(){
-    // var hero = document.createElement('script'), item = document.createElement('script');
-    // hero.src = 'http://poiqwe.github.com/playdota2/hero.js';
-    // item.src = 'http://poiqwe.github.com/playdota2/items.js';
-    // document.getElementsByTagName('head')[0].appendChild(hero);
-    // document.getElementsByTagName('head')[0].appendChild(item);
-// })();
-
 unsafeWindow.addEventListener("load",init,true);
 
 function init() {
+	"use strict";
 	
 	replaceImages();
 	if (/http:\/\/www\.playdota\.com\/(?:heroes|items)/.test(document.location.href)) {
@@ -29,15 +22,19 @@ function init() {
 }
 
 function replaceImages() {
+	"use strict";
 	
 	var re = /playdota.com\/(?:img\/)?(hero|items)\/(\d+)\/+(icon|thumb|skill-\d)/,
 		IMGUR = "http://i.imgur.com/", BITLY = "http://bit.ly/dota2-", GITHUB = "http://poiqwe.github.com/playdota2/skills/", EXTENSION = ".png",
 		list,img,src,
-		category,key,type,
 		sizes = {
 			thumb: 38,
 			icon: 64
-		};
+		},
+		template = '<table><tr><td style="vertical-align:top"><img src="{0}" class="tooltip"/></td><td>{1}<br/>{2}</td></tr></table>',
+		classes = ["http://i.imgur.com/y5iFD.png","http://i.imgur.com/NIAxG.png","http://i.imgur.com/lUNc4.png"],
+		category,key,type,
+		tooltip;
 	
 	list = document.querySelectorAll('img[src*="playdota.com"]');
 	
@@ -46,23 +43,55 @@ function replaceImages() {
 		src = img.src;
 		img.onerror = (function(i,s){return function(){i.src=s;};})(img,src);
 		
-		if (!re.test(src)) continue;
+		if (/tooltip/.test(img.className) || !re.test(src)) continue;
 		
 		category = RegExp.$1; // hero | items
 		key      = RegExp.$2; // integer
 		type  = RegExp.$3; // icon | thumb | skill-0
 		
-		if (!!!parseInt(key)) continue;
+		if (!parseInt(key)) continue;
 		
 		img.width = sizes.hasOwnProperty(type) ? sizes[type] : img.width;
 		img.height = sizes.hasOwnProperty(type) ? sizes[type] : img.height;
-		if (data.hasOwnProperty(category)) {
-			if (!!data[category][key] && !!data[category][key].imgur) {
-				if (type.match(/skill-\d+/) != null) {
-					img.src = GITHUB + key + "/" + type + EXTENSION;
-				} else {
-					img.src = IMGUR + data[category][key].imgur + EXTENSION;
-				}
+		if (data.hasOwnProperty(category) && !!data[category][key] && !!data[category][key].imgur) {
+			if (type.match(/skill-\d+/) != null) {
+				img.src = GITHUB + key + "/" + type + EXTENSION;
+			} else {
+				var args, sub = data[category][key];
+				
+				img.src = IMGUR + sub.imgur + EXTENSION;
+				
+				if (category == "hero") args = [classes[sub.hclass-1],sub.name,sub.name2];
+				else args = [src,'<b>'+sub.name+'</b>','<img src="http://i.imgur.com/HHHUl.jpg"/>'+sub.price+'<br/>'+sub.bonus];
+				
+				tooltip = document.createElement('div');
+				tooltip.innerHTML = format(template,args);
+				tooltip.setAttribute('id',category+key);
+				tooltip.style.backgroundColor="black";
+				tooltip.style.position="absolute";
+				
+				img.addEventListener('mouseover', (function(t) {
+					return function(e) {
+						document.body.appendChild(t);
+						t.style.top = (e.pageY + 10)+"px";
+						t.style.left = (e.pageX + 30)+"px";
+					};
+				})(tooltip),true);
+				
+				img.addEventListener('mousemove', (function(id) {
+					return function(e) {
+						var t = document.getElementById(id);
+						t.style.top = (e.pageY + 10)+"px";
+						t.style.left = (e.pageX + 30)+"px";
+					};
+				})(category+key),true);
+				
+				img.addEventListener('mouseout', (function(id) {
+					return function(e) {
+						var t = document.getElementById(id);
+						document.body.removeChild(t);
+					};
+				})(category+key),true);
 			}
 		}
 	}
@@ -312,6 +341,9 @@ var data = {
 	}
 };
 
+data.items[7] = data.items[769];
 data.items[8] = data.items[770];
 data.items[54] = data.items[773];
 data.items[112] = data.items[772];
+
+function format(a,b){return a.replace(/\{([^}]+)\}/g,function(a,c){return b.hasOwnProperty(c)?b[c]:a})};

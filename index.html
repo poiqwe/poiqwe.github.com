@@ -1,75 +1,94 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang='en-us'>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<title></title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="css/style.css">
-	
-	<script src="js/libs/modernizr-2.0.min.js"></script>
-	<script src="js/libs/respond.min.js"></script>
+    <meta charset='utf-8'>
+    <title>PlayDota2 Userscript</title>
+    <style>
+    .bookmarklet {
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #d1d1d1) );
+        background:-moz-linear-gradient( center top, #ffffff 5%, #d1d1d1 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d1d1d1');
+        background-color:#ffffff;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        border:1px solid #dcdcdc;
+        display:inline-block;
+        color:#777777;
+        font-family:arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:2px 10px;
+        text-decoration:none;
+        text-shadow:1px 1px 0px #ffffff;
+        cursor: pointer;
+    }
+    .text3d{
+        font-family: 'Cooper', 'Cooper Black', 'Cooper Std', 'ballterminals', 'serif';
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+    }
+    a, a:visited, a:hover, a:focus { color: black; text-decoration:none;}
+    a:focus { outline: thin dotted; }
+	.container { text-align:center; }
+	.main { padding-top:5%; }
+    </style>
 </head>
-<body>
-	<div id="header-container">
-		<header class="wrapper">
-			<h1 id="title">Initializr</h1>
-			<nav>
-				<ul>
-					<li><a href="#">Some</a></li>
-					<li><a href="#">navigation</a></li>
-					<li><a href="#">links</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-	<div id="main" class="wrapper">
-		<aside>
-			<h3>Something aside</h3>
-		</aside>
-		<article>
-			<header>
-				<h2>Your article heading</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
-			</header>
-			<h3>A smaller heading</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>	
-			<h3>A smaller heading</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.</p>
-			<footer>
-			<h3>About the author</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-			</footer>
-		</article>
-	</div>
-	<div id="footer-container">
-		<footer class="wrapper">
-			<h3>A nice footer</h3>
-		</footer>
-	</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-<script src="js/script.js"></script>
-<script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
-<!--[if lt IE 7 ]>
-	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-<![endif]-->
-
+<body style='font-family:arial,helvetica'>
+    <div class="container">
+		<div class="main">
+        <h1 class="text3d">PlayDota2 Userscript</h1>
+        <p><a href="http://www.reddit.com/r/DotA2/comments/nsey8/playdota_to_playdota2_conversion_script/">
+		<img src="http://www.reddit.com/static/spreddit5.gif" style="margin:15px 6px 0 6px" />
+		playdota.com with Dota 2 icons.</a></p>
+        <div style="position:relative;height:131px;width:268px;margin:0 auto;"><a href="http://www.reddit.com/r/DotA2/comments/nsey8/playdota_to_playdota2_conversion_script/" target="_blank"><img src='playdota2.png' /></a>
+		<a href="http://userscripts.org/scripts/show/121592" style="position:absolute;display:block;height:64px;width:64px;right:0;bottom:0;z-index:1;"></a></div>
+		</div>
+        <!--<div style='padding-left:3em;float:left;width:40em;'>
+        <h3>
+            <img src="data:image/gif,GIF89a%20%00%20%00w%00%00!%F9%04%01%00%00%D7%00%2C%00%00%00%00%20%00%20%00%87%FE%FF%FF%FE%D8%10%F8%D2%11%E3%00%00%D2%00%00%F5%D0%12%F0%CB%13%DB%B9%19%AD%D5~%C4%09%095%ABH%FF%E19%91%CAc%E9%00%00%EE%CA%13%18%87%D2%CB%E3%AC%C9%00%00%D5%E8%BEZ%B7S%7B%C1%5C%F2%00%00%FF%DD%24%FF%DB%18%B1%CD%B2%85%BE%F0%FF%DE%2B%FD%E6h%DC%0E%0ED%B4m%DB%00%00U%B5R0%3FL2%AD%60%FF%E3D%3C%B1hk%B4%81N%98%E96%8F%E2)%8C%DAT%9C%EAI%B6r%AA%AC%97c%A5%EC%3C88%D8cc%D4%B3%1A!%A4C%EAJG%3Ddl%8A%C7a%16u%B0%D6%B3%2B%DC%BA%2B%D5WW%F9%ED%AFs%B0%EE%B4%D8%88%98%C5%A6h%A9%ED%A1%CFk%E4%C1%16D%97%DB%C8%B2%5Bi%A2%AAo''%D2LL%FF%E5M%E9%25%25%2FJ%3C%FF%E02%CA%3A%3A%AC%95%8D%83%C5_z%2F0%FF%E5Y%E3cc%B4%92CE%B0M%FA%E7%88P%5Bg%F3%B4%B4%C5%E1%A4YWV%F7%EB%A6%0E%9E%3DYx%8D5n%8C%CF%E4%C5%1A%A2K%14%9ECe%BBV%E6%9C%9Cl%BDXr%BFZ%5Boi%E1%C0%24%AA%D3wKPL%3A%40%3D%EA%C6%15%ED%C9%19%CA%E3%B5%D0%AF%1Bqkf%FB%EB%97%E4%C0%1F%CE%AD%1B%8B%85w%9E%CDh%84r%89%ED%84%84%3B%93%E2%89%A3t%DE%BE%3C%A6%D1q-U%40%ECpp%26z%B8z%C5u%C7%05%05%5B%BBl(Wv%F1%A5%A5gaZ%88%CC%8A%B1TT%95%2B%2B%BD%D7%94%EC%AC%ACR%B9u%81vX%93n%2F%C6%16%16hao%9E%D0%F2%FF%EC%7BM%89jH%B1N%CA((%8C%A4%95%C1%DF%9B%7D))%D2%CB%A6%E0%BD%251%5CF%C2%AFy557%E4%BF%1A%BD%A8%A8%A6%D6%94%83%80%A0%E2%CCz9%3B6%F0%88%88%DE%B0%B0%F3%99%99%DD%93%93%C4%BB%91%FD%F2%B6%E9%E0%AA8CH6JR%F1%CC%13%E4%DA%A9%F8%DCH%F7%D70%3FQ%3E%25P%3A%D8%B6'%95kk%8001%BCjj%A5c%5BR%A6%D8X%9E%EBd%AC%E4b%A4%CA%E6%08%08f7%3C%5E99%ED%1B%1B%D0%08%08D%3F%40%D711%D4%10%107%96%D1%3C%B0%5D%3F%AEKO%B4P7%AFdzut%7FKX4%A5I4%95b6%87%B9g%86h%3E%8F%C2TI4N%A8uA%A3kN%B8vI%B5m%F6%10%10%D9%B7%19%3BmQ%F8%20%20%DE%BB%17%A7%D2x%97%81C%DAll%92%CD%7F%F400%D7%B4%25%EB55%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%08%FF%00%AF%09%1CH%B0%A0%C1%83%08%0F%B6ha%C3%86%10!%0D%17%26%9CxM%88%B4%23%09%12%E0%C9%98%B1%D0%A2EG(%1Al%C5%84%89%AD%08%04R%AA%8C%C0rc!%91%D7%CC%88A%02%83%C0%80%9B%1Crr%18%E0%A1%E7J%8A%10%24%7C%D9dm%40%03%22u%F6DY%FA%06%86%D1%9B%1E%08%E4J(%25(%A3J0*0%09%C4JI%90%20%8E%FC%ECyC%A4A%83%9B%03%12%22%90%22%01%0B%A3Nu%B8(1%E4%E6%92%1BCP%94p%E1T%ABB%05%B3%B2%0EZb%80%00A%23%12H%02%AD%82b%05%16%8A%12%3E%EC%14%03%C6E%93%B3e~%1B%C008M%06%0F%049%1A%A9P%05e%D8%8EW%3Bp%EC%80%1CkV%90%3F%7F%8E%E0%22B%AD%60%9F%3BI%DA%84%C9!%05%C3%14%3D%AE%E0%AC%C8p(%C3%0A8%40%ACHB2h%0A%AD%B0M%08%F6%D9B%81%C1%1C%04%10t%14%B9%E2%C3%C4%F0%E2%2BL%00%FF%89%D1%24%CD%82R%3F%9A%13%22x%E7%83%17%CF%D8%B5%C78q%02%05%8E%0C8P%9C%00%22%AA%C9%93%00%01%08%60%CA%0F%EB%0D%94%C7%07%5B%24a%1D%20X%A0%F2%85%1D%0F%98P%C2c%26%E8b%C5%18%3F%20%02%A0%00%028%00%06Ay81%C1%7Bm%20%80E%22c%C40%C3%03%0F%9C%C0%E2%15%20%18%83%C9%06%1B%16%A0%86%1C%04%91%A0%40%2F%D41%C0%83%19%18%D0qJ%0CW%CC%60%A4%1E%20%B0%10%0D%15%16%04(%80%01%94%1C%40%90%20%0A%F0%F2A%17%D5%85!%81%0EtdRD(%20%800%09%0Bl%DC%40%A3%93%0E%D4%20%E5%40%82%EC%A2%80%88%5ET%97%83%04%18%24%22%C6-%2C%B0%C0%87'T%FC%B7%A1%01d%D0%E0%02A%C9(%F3%82%02%8AL%D0%85%82%D0%40%80%C1%2Fl%3CB%CA%0Df%5EP%A3%01%07%A4rFA)hqh%A2X%CA%10%07%1A*%7CrC%1A%1B%2C%60%E9%9F%0E%D0%C0%8CA!%8C%ABP%C5%A1N%7C0%011%7C%3C%82%C8%10%0B%2C%A0A%935%A6Y%C3%1A%07u%90%C5%AC%0A%04%F3%05%1A%A0%2C!%C2%02F%FC%0A%60%80%05%8Cr%405%83%1E4B%07ZT%A1E3*P1%C4%B3FX%B0*%B5%06%80A%C3%01%C4%224B%08Yd%11%C9%13%E4j%A0%C1%B9%1C%96Q%03%24%07l%3AQ%07!%84%80%8C%0AK%FCz%AE%936%CA%F1L%B6%14%A5%E0%CB%08%C2%60%20%C2%B4%97%3A%D0%83%A00%0D%D4A%0A%C7%C4%B1%84%93%02%14%60%40%19%3D%AC%991A)%90%40%02%20C%88%EC%00%19%3D%9C%2C%F3%CC4%D7l%F3%CD0%05%04%00%3B" />
+            Chrome
+        </h3>
+        <div style='padding-left:1em;'>
+        Click <a href="playdota2_base64.user.js">here</a>, then click continue and install.
+        <div style='padding-left:2em;font-size:0.8em;'>
+        Don't worry about the message. 
+        It just means that the userscript knows what website you are on. <br />
+        It needs that to check whether you are on www.playdota.com or not. <br />
+        This userscript does not store any of your past web history usage.
+        </div>
+        </div>
+        <h3>
+            <img src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%20%00%00%00%20%08%02%00%00%00%FC%18%ED%A3%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%00%04gAMA%00%00%B1%8E%7C%FBQ%93%00%00%00%20cHRM%00%00z%25%00%00%80%83%00%00%F9%FF%00%00%80%E9%00%00u0%00%00%EA%60%00%00%3A%98%00%00%17o%92_%C5F%00%00%0AkIDATx%DAb%FC%FF%FF%3F%036p%E3%C6%8B%B5k%CF-%DAp%E1%3B%0B%13%A3%B8%D0kVvfn%CE%FF_%BEp%FD%FC%F5%EF%D9%1B%D6o%3Fm%8C%15%13%22M%DD%DD%B5XX%98%19p%03%80%00b%C4%B4%E0%D1%A3w%0D-%5B%F7%9D%B9%FD%9C%9F%EB%9F%AE%0A%9B%AC8%1B%3F%0F%9B0%3F%1B%0F%F7%BF%8F_%FF%BC%FB%F4%FB%CB%B7_%EF%3E%FC%BCr%9B%FD%DA-%11f%E6%AE%E6%60oo%13NNN%26%26%26L%0B%00%02%08j%C1%9F%B7%8F%FE%3C%BD%C6%A1%E7%B1o%DF%8D%B4%BC%C5%0FY%FE%FCQ%93c%14%16b%E1%E6%60%E5%E1%60%13%12%E4%90%95d%E7%E1bfe%F9v%FB%C9%CF%B7%EF%7F%7D%06%DA%F4%A6%F4%FDD%7D%BEOG%1E%B0%BC%E5%B1%C8)%CF%D6%D6V%E7%E6%E6fddD%B6%00%20%80%A0v%BE%5BT%F8%F1%C0%A2%E5%CBO%06%C5%F4%DDe%FE%F1G%5C%88%E1%CF_%86%0F%AF%FF%3F%BB%9B%FFi%C3%DF%0F%EF%81%EE%F8%F7%FF%FF%DF%3F%7F%FF%FD%F9%F3%FF%C7o%86_%7F%FE%FFcl%FB%19%BC%F1%09%7F_%BB%F2%A2%1E%EE%E7%8B%A2W%2F%5D%F2%EA%D5%AB%BF%7F%FF%22%5B%00%10%400%0B%CE%1E~st%F7%84%E6%FE%8Fl%DF%18%FE~dx%FB%88%E1%F9%CDF%B1%A3_%2By%CD~%3C%02%99%CE%CC%F4%FB%F7%EF%EF%8F%5E%FE%F9%F4%F5%EF%8F%1F%FF%99%99%FE%FF%F9%F7%9F%8D%7F%C9%0F%D7%84%EA'%0C%1C%FF%03z%2B%83%B8%17o%98%D7%FD%E2%C5%8B%7F%FF%FE%C1-%00%08%20P%10%7D%BB%7B%E9F%B6%ED%BF%BF%0CL%7C%BC%2F%B5%CD%14%C48%80%BEd%FD%F2AN%5C%FC%CD%D5kvO%9C%9E%19%BA%B3%C9H%FE%7B%F2%96%E1%F7_%06.%E6%7F%8C%8C%FFD%05~%7F%FE%F2%7B%E7%09%86%AF_%18%DE%3CZl%B1%2F%A6%2F%98%81E%E9%F3%FA%F9%2B%9Fz%06%C6f%0A%09%09A%C2%0A%20%80%40%3E%F8p%E3%F2%B7%F7%7F%85y%99%95%E5%F8l%18%9EJ%BF%7F(%F5%ED%85%D8%93%9B%40%A9%BB%97%EF%D9%7C%B8%F2W%84%FF7%C3%FF%7Fr%C2%FFd%84%FEI%08%03%B9%7F~%FF%F9%03L%3CL%8C%0C%B6%26%0C%CC%BC9%874%3Fn%D8%C6%F0%FF%2B%AF%A7%BD%CE%8FU%17%2F%5E%FC%F9%F3'%C4%07%00%01%04%B2%E0%EC%B1%EBR%A2%7F8X~~%7Dz%E7%F3%ADs_o%9C%FDv%E5%C4%9F__%BF%9E%D8%F3%E6%EE%E7%AB7%EF%FD%BE%7B%E5%E7%8B'%BF%3E%7F%FA%CD%F0%EF%D7%AF_%BF%7F%01C%EB%F7%FF%9F%7F%18%CCt%19%AE%DFg%D0%D1%FA%A8%EF%92%B7%9C%83%E1%E5a%86%FFL%16%E1%F2%97%D6u%3E%7F%FE%1C%92%7C%00%02%08d%C1%E33%07%99%99~%FE%FD%F3%0D%18%8B%F0%B0%FB%FD%EB%CB%AF%EF%1F%C4%24%18%8B%FE%DElZ%9Fi65%92%FD%D6%A9_%3F%7F%FE%FA%F9%EB%CF%CF_%FF%7F%FCb%00%A2%7F%FF%19T%15%19%C4%C4%18%04%C57%FE%B6%F8r%EE)%C3%8FW%0Cl%1C%0E%3A%CFn%DD%BA%05%F1%04%40%00%B1%9CX%B3%D1%91%E34Z%0Af%FC%CF%00%8CC%20CF%86%99%85%F9%9F%5D%40%94%3B%9F%82%E9%7D%09%86o%BF%40%D2%7F%FF%83%D2%180%3E%DE%BCg%60bf%00%3A%F4%2F%E3GV%C9%7D%87%3E%F9%E9%BDb%F8%FD%C9%C0%98%A7o%FBn%03%03%03666%80%00b%FA%B0k%0E%CB%97%9F%FF%FE%20%25%2C%A0m%E0%CC%C7%C4%C1%C9.%2C%A0%92Qz%90Q%D6%F4%B4%10%0337%C3%F7_%0C%DF~2%BC%FD%C8%F0%F4%15%88%7D%FB%01%C3%C5%AB%0C%9F%BE2%FC%FC%CD%F0%E8%D3%D9%87%8C%0C%2F_1%7C%FD%CE%004%E0%E5%89%D7%AF_%03%93%13%40%00%B1%FC8r%EA%3B%17%03'%3F%CCt%16%16(%83%8B%9B%99%8B%87%95%8B%FB%D3%85MQ%F7B%18%14%A4%18%FE02%FC%F9%09%B2%FB%CD%07%86%7B%0F%18%80%3E%D4Pc8s%8E%E1%D9%0B%06%06.%86%B7_%2F%08%F3%FE%FF%FE%8F%91%81%91%E1%2F%03%0F%CB%A7%B7o%DF%02%A3%0A%20%80%98.%7F%13f%E3%82%85%0C33(m111%F3%F01%F3%F23%F1%82Ha)%09K%A6%C7%0C%DF%7F3%7C%FD%09r%3E%10%01%5D%F8%E5%3B%C3%E7O%0C%C7N0%7C%FB%C6%F0%EE%3D%03%17%2B%83%AA%84%81%F0W%06%60%10%FE%00%A1%FF%8C%BF%3E%7D%FA%04L%11%00%01%C4%A2%F4%FF%25%22t%80%19%EA%EF%BF%EF%BF%98%AE%5Dz%FF%F6%DDkVI%B6%ED%02%86%CA%82_y%80%91%FF%ED%07%03%CB%3F%A0%E3%40%0E%FF%CF%C4%20%25%C5%F0%EC%19%C3%A7%CF%0C%7F%FF0%7C%FF%CE%C0%CA%C9%F0%EA.%83%E0%1F%06p%1C%01%7D%F0%F3%3B%03%D0t%60%AE%06%08%20%16%DEo_%BE%7Fd%E0%11%01%9B%FF%EF%DF%9F%7F%8C%E7%AF%FF%FE%FB%E7%3F%1F%3F%EB%9A%DF%E2%CB~%3A1%7C%17%07%26%0C%86%1F%C0%7C%08N%DA%FFA%EE%60%60%07%86%C9%1B%86_%3FA%16%00%D1%AD%8B%0CL%3F%1C%94%18A%16%FC%03Y%00%0C%CB%7F%60%00%10%40%2C%C0%F4%F0%EB%1B%C2%0F%DF%7F2%B0%B331q0%B0%B215%AA%BD%BBt%E9%E8%15Fg%06%8E%3F%0C%FF%3F2%FC%FE%CA%F0%E7%07(%7C%D8y%19X%F8%80%01%0Ar'%B0%E4%01%A6%90%3F%BF%04%F8~%DA%ABr%81L%FF%09%B2%E0%EFoFH%E1%0A%10%40%2C%9Fy%D99%9E%7D%93%D6%85Z%00%8C%05%5EnfF%16F%16%16F%5E%16%C6%0D%86%17j%2F%3F~%FCQD%8E%FDc%81%CEo%0DiQf~%D1%7D_%B9%7C%B7k3%08%881%BC%7B%C9%F0%1B%E8%D4%BF%0C%CC%7F%F3L%9F20q%83L%07%FB%40%8C%93%01X%80%03%0D%04%08%20%96%CF%2C%9C%FC%DF%BE%7Dy%03%0D%25%0E%F6%FF%3C%3C%8CL%CC%CCLl%CC%AF%DE%FEff%FE7%C5%FC%03%23%F3%E7%FF%FFY%999%18%FE~%7D%F2%FA%DE%7De5%03%60%19%02L%FB%0C%3F%3E%81L%FF%F7C%80%E5s%9E-%1B%03%2B%03%037%B0%E4%01%99s%86%D9!%88%03X%A61%02%04%10%CBce%2B%99%FB%9B_%5CgP%B1%05%A7NF%061%81%BF%3F%FE%B12%B133%B2%B1%1E%DA%FDNA%EE%0F7%173%1B%CB%8F%BF%DF%FF%BD%F9%CD%18%FB%DC%F1%D5QI%86%8F%B7%81%09%85%E1%FF%2Fy%DEwv*%DF%E2%CCY%058y%18%9Dl%18%CF%3Ea%60xr%FE!0%CD%FD%E3%E0%E0%60ff%06%08%20%26%CD%F8%24fN%06%A0%0F%DE%3D%82%86%12%2B%D3%3F%5E%8E%DF%BC%EC%FF%F8Y%FFY%98q%DFz%FE%E7%FA%C3_%87%1E3%D4%3FSp%7F%1C%FD%8AI%9B%E1%F5K%86%3F%BF%19%FE%7Ce%F8%FDnu%DCO%05%C1%DF%0E%AA%5C%8CZ%9C%8Cb%86%F0%B8%B4%B7w%10%10%10%60gg%07%08%20%16ss%9D%25%02%02%A6%DF%3F%3C%BD%C4%C0%25%C8%C0%25%02)*%FE1%FC%FD%C9%C0%CC*.%C6fd%C9%14%BCQ%F4%D1'E%06%01Y%06%1E~%86_%3F%18%BE%3Ec%F8%FF%9B%9F%FDS%B7%EF%2F%7Di%3E%039NFA%06%26%0B%AF%FF%0F%8E3%BE%7B%FC%E0%ED%AF%C5%1F%FD%BD%C4D%81q%00%F4%01%40%001IKK%B1e%B7%02%3D%F1%F77%C3%ED%83%FF%3E%BFBT%D1%FF%80%C9%F8%DFoe~%A6%0B%89%EF%A7y%9C%D5%E5%3C%CB%F0%E9.%C3%A7%DB%FC%DC%FFb%0C%5E%9C%C8%FD%17c%C8%0D%0AUyFfO%13%86%BF%AC%FF%8F%9F%05r%0F%DC%F8nh%A8%0A4%9D%97%97%97%85%85%05%20%80%18%81%86%00K%BE%F9%9E.%B6%0F%9EB%CC%15Vb%966%60%E3%10%60fdfbdaf%02%92L%C0t%05b%03E%98%80%0C%60%D4%FF%FD%FF%F3%F3o%266F%1E%7BQV%7D%25%06n%99%FFW%AF3%5C%7F%B7%E8%C4%E7%7BR%09VV%FA***222%C0h%00%08%20%16%60D%03Y%06m%13%3F%E5%86%F1%BD%05%95%A0o%EF%FD%7D%7B%EF%BB%A0%1C%8B%A0%22%2B%B7%18%03%AF8(9%FF%FF%F1%8F%81%05%98%EE%7F%FF%FF%FB%FF%F7%F7%7F%C0%CA%99C%8D%85%C3%90%9DA%F8%C7%FF%1F%9F%19%9E%5C%F8%7F%F9%F3%C5%E7%3F%F7%7C%B6%0F%D4W%E1%E3%E3%13%14%14%04%16%A5%40%8D%00%01%04%AA2%81%F9%0DX%91%CE%9A%B5Rmj)%DF%9B%BF%98M%0Fv%5Ef%1EQ%16%3E%09%96%EF_%7F%FDg%FD%C7%AB%CA%CA%A3%CA%CA!%CE%C6.%C2%C6*%C4%C6%F4%83%87%E9!%EB%C7_%0C%E1%EB%D5S%B3%03%C5%C5%C5%15%14%14%24%25%25%81%16%00%5D%0F%10%40%2C%90%F2YDD%24%3A%DAg9%D3%3F%D5)%E5%BC%AF%D1%ED%F8%F9%F9%2F%10%7Dx%F2%93C%18%18%18L%FF~%FF%FB%F3%E9%DF_%AE%7F%7FX%FF%FD%7B%F2%8F%E9%F3%AF%5B%DF%FF6%9CT%8DI%F2%16%16%16%06Z%004%0Db%3AP%2F%40%00A%DBE%40%F2%C7%8F%1F%F7%EF%DF%DF%BCy%2F%CB%94j%CDW_%FE%FDBo%90%01%AB%16f6%06%0Eq%06%3E%25%16.)VvN%60%DE%60e%E3c%3F%F5%91i%D9wW%DF%60%17%88%E9rrr%C0%20%02%A6%1F%88.%80%00B%B4%EC%80%01%F5%FD%FB%F7%A7O%9F%9E%3D%7B~%EB%E2%CD%96%17%D6*%7D%FA%F5%F7%EB%3Fd%3BX%D8A%E5%26%A7%103%07%1F%0B%A70%DB%03v%F65%1F%E44%02b%14%15e%81%A9%1E%E8p%60t%02%19%2C%B0J%05%08%00%02%08%A5%E9%08%B4%03%E8%0F%60Mt%EF%DE%BD'O%9E%EC%DBw%ED%EB%C1-%C6%BF%1E%F12%FE%95%FB%05%2C'%19%99X%18~p1%BFec%BB%C1(pC%D8%CC%C9%CFZRR%14%E8%5E%60%8A%14%15%15%95%90%90%00%B2%91M%07%02%80%00Bo%9B%02%B9%C0%CA%FA%E3%C7%8F%40k%80U%12%90%01%AC7%9E%3E%7D%FF%E2%C5%A7%DB%B7%DF%2B%2B%0B%08%09q%02%CD%E1%E5%E5%E6%E2%E2%02%A6B%60%5E%E5%E1%E1%01%1A%0DL6%90%9C%85%16%B0%00%01%84%A5%F1%0B%14%01f%0E%A05_%BF~%FD%F0%E1%C3%FB%F7%EF%81%DE%02%E590%60%82%01VVV%A0%C3%81%0D%2C%20%09%B4%0C%94%A7P%5B%A5%10%00%10%40%8C%B8%9A%EF%FF%C1%E0%17%12%00Z%09%24%81%E6%B2%81%01%84%01%F4%013%A4%A2%C5%01%00%02%0C%00%F6y%9B%85%5B%B9%1C%D2%00%00%00%00IEND%AEB%60%82" />
+            Firefox
+        </h3>
+        <ol>
+            <li>Download <a href='https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/'>Greasemonkey</a></li>
+            <li>Click <a href="playdota2_base64.user.js">here</a> and install the userscript.</li>
+        </ol>
+        </div>
+        
+        <div style='float:right;padding-right:2em;'>
+        <h4 style='margin-bottom:0;'>PlayDota2 Bookmarklet</h4>
+         
+        <font size="-1">
+        (if you prefer being able to switch between DotA and Dota 2 icons)
+        <ol>
+            <li>Open Bookmarks Bar (Ctrl+Shift+B for Chrome)</li>
+            <li>
+                Drag the following bookmarklet to the Bookmarks Bar
+                <p>
+                <!-- <a class="bookmarklet" href='javascript:function replaceImages(){var a=document.querySelectorAll("img[src*=\"media.playdota.com\"]");for(var b=0;b<a.length;b++){var c=a[b];var d=c.src;if(!d.match(/(icon|thumb)/)){continue}var e=d.split("/");var f=e[3];var g=e[4];var h=e[5].split(".")[0];if(h.match(/icon/)){var i=".png"}else if(h.match(/thumb/)){var i=".gif"}else{continue}if(isNaN(parseInt(g))||g=="0"){continue}var j=g;if(g=="107")j="407";if(g=="773")j="54 + 773";c.src="http://g-b-t.biz/data/scnr/dota2/"+f+"/"+h+"/"+j+i;if(f=="hero"&&typeof HD!=="undefined"){xmlString=loadXMLString(HD[g]);name=xmlString.getElementsByTagName("class")[0].childNodes[0].nodeValue;c.alt=name;c.title=name}if(f=="items"&&typeof IT!=="undefined"){xmlString=loadXMLString(IT[g]);name=xmlString.getElementsByTagName("name")[0].childNodes[0].nodeValue;var k=document.createElement("div");var l=document.createElement("img");l.src="http://media.playdota.com/items/"+g+"/"+xmlString.getElementsByTagName("text")[0].childNodes[0].nodeValue;var m=document.createElement("span");m.innerHTML=xmlString.getElementsByTagName("price")[0].childNodes[0].nodeValue;var n="";for(x=0;x<xmlString.getElementsByTagName("bonus")[0].childNodes.length;x++){try{if(xmlString.getElementsByTagName("bonus")[0].childNodes[x].nodeValue!=null)n+=xmlString.getElementsByTagName("bonus")[0].childNodes[x].nodeValue+"<br />"}catch(o){}}var p=document.createElement("p");p.innerHTML="<strong>BONUS</strong><br />";p.innerHTML+=n;var q="";for(x=0;x<xmlString.getElementsByTagName("info")[0].childNodes.length;x++){try{if(xmlString.getElementsByTagName("info")[0].childNodes[x].nodeValue!=null)q+=xmlString.getElementsByTagName("info")[0].childNodes[x].nodeValue+"<br />"}catch(o){}}var r=document.createElement("p");r.innerHTML="<strong>ADDITIONAL INFO</strong><br />";r.innerHTML+=q;k.appendChild(l);k.innerHTML+="<br /><img src=\"http://media.playdota.com/site/coin.jpg\" align=\"absmiddle\">";k.appendChild(m);k.appendChild(p);k.innerHTML+="<br />";k.appendChild(r);k.setAttribute("id","justTheTooltip");k.style.backgroundColor="black";k.style.width="400px";k.style.position="absolute";c.onmouseover=function(a){return function(b){document.body.appendChild(a);a.style.top=b.pageY+10+"px";a.style.left=b.pageX+30+"px"}}(k);c.onmousemove=function(a){var b=document.getElementById("justTheTooltip");b.style.top=a.pageY+10+"px";b.style.left=a.pageX+30+"px"};c.onmouseout=function(a){var b=document.getElementById("justTheTooltip");document.body.removeChild(b)}}c.onerror=function(a,b){return function(){a.src=b}}(c,d)}}function loadItems(a){if(typeof IT==="undefined"){var b=document.getElementsByTagName("head")[0];var c=document.createElement("script");c.type="text/javascript";c.src="http://www.playdota.com/cache/items.js";var d=false;c.onload=c.onreadystatechange=function(){if(!d&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){d=true;a();c.onload=c.onreadystatechange=null;b.removeChild(c)}};b.appendChild(c)}else{a()}}function loadHero(a){if(typeof HD==="undefined"){var b=document.getElementsByTagName("head")[0];var c=document.createElement("script");c.type="text/javascript";c.src="http://www.playdota.com/cache/hero.js";var d=false;c.onload=c.onreadystatechange=function(){if(!d&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){d=true;a();c.onload=c.onreadystatechange=null;b.removeChild(c)}};b.appendChild(c)}else{a()}}loadHero(function(){loadItems(replaceImages)})'>PlayDota2</a> -- >
+                <a class="bookmarklet" href='javascript:(function(a){function e(a){try{xmlDoc=new ActiveXObject("Microsoft.XMLDOM");xmlDoc.async="false";xmlDoc.loadXML(a);return xmlDoc}catch(b){try{parser=new DOMParser;xmlDoc=parser.parseFromString(a,"text/xml");return xmlDoc}catch(b){alert(b.message)}}return null}function d(a){if(typeof HD==="undefined"){var b=document.getElementsByTagName("head")[0];var c=document.createElement("script");c.type="text/javascript";c.src="http://www.playdota.com/cache/hero.js";var d=false;c.onload=c.onreadystatechange=function(){if(!d&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){d=true;a();c.onload=c.onreadystatechange=null;b.removeChild(c)}};b.appendChild(c)}else{a()}}function c(a){if(typeof IT==="undefined"){var b=document.getElementsByTagName("head")[0];var c=document.createElement("script");c.type="text/javascript";c.src="http://www.playdota.com/cache/items.js";var d=false;c.onload=c.onreadystatechange=function(){if(!d&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){d=true;a();c.onload=c.onreadystatechange=null;b.removeChild(c)}};b.appendChild(c)}else{a()}}function b(){var a=document.querySelectorAll("img[src*=\"media.playdota.com\"]");for(var b=0;b<a.length;b++){var c=a[b];var d=c.src;if(!d.match(/(icon|thumb|skill)/)){continue}var f=d.split("/");var g=f[3];var h=f[4];var i=f[5].split(".")[0];if(i.match(/(icon|skill)/)){var j=".png"}else if(i.match(/thumb/)){var j=".gif"}else{continue}if(isNaN(parseInt(h))||h=="0"){continue}var k=h;if(i.match(/(icon|thumb)/)){c.src="http://g-b-t.biz/data/scnr/dota2/"+g+"/"+i+"/"+k+j}else if(i.match(/skill/)){c.src="http://g-b-t.biz/data/scnr/dota2/skills/"+h+"/"+i+j}if(g=="hero"&&typeof HD!=="undefined"&&!i.match(/skill/)){xmlString=e(HD[h]);name=xmlString.getElementsByTagName("class")[0].childNodes[0].nodeValue;c.alt=name;c.title=name}if(g=="items"&&typeof IT!=="undefined"){xmlString=e(IT[h]);name=xmlString.getElementsByTagName("name")[0].childNodes[0].nodeValue;var l=document.createElement("div");var m=document.createElement("img");m.src="http://media.playdota.com/items/"+h+"/"+xmlString.getElementsByTagName("text")[0].childNodes[0].nodeValue;var n=document.createElement("span");n.innerHTML=xmlString.getElementsByTagName("price")[0].childNodes[0].nodeValue;var o="";for(x=0;x<xmlString.getElementsByTagName("bonus")[0].childNodes.length;x++){try{if(xmlString.getElementsByTagName("bonus")[0].childNodes[x].nodeValue!=null)o+=xmlString.getElementsByTagName("bonus")[0].childNodes[x].nodeValue+"<br />"}catch(p){}}var q=document.createElement("p");q.innerHTML="<strong>BONUS</strong><br />";q.innerHTML+=o;var r="";for(x=0;x<xmlString.getElementsByTagName("info")[0].childNodes.length;x++){try{if(xmlString.getElementsByTagName("info")[0].childNodes[x].nodeValue!=null)r+=xmlString.getElementsByTagName("info")[0].childNodes[x].nodeValue+"<br />"}catch(p){}}var s=document.createElement("p");s.innerHTML="<strong>ADDITIONAL INFO</strong><br />";s.innerHTML+=r;l.appendChild(m);l.innerHTML+="<br /><img src=\"http://media.playdota.com/site/coin.jpg\" align=\"absmiddle\">";l.appendChild(n);l.appendChild(q);l.innerHTML+="<br />";l.appendChild(s);l.setAttribute("id","justTheTooltip");l.style.backgroundColor="black";l.style.width="400px";l.style.position="absolute";c.onmouseover=function(a){return function(b){document.body.appendChild(a);a.style.top=b.pageY+10+"px";a.style.left=b.pageX+30+"px"}}(l);c.onmousemove=function(a){var b=document.getElementById("justTheTooltip");b.style.top=a.pageY+10+"px";b.style.left=a.pageX+30+"px"};c.onmouseout=function(a){var b=document.getElementById("justTheTooltip");document.body.removeChild(b)}}c.onerror=function(a,b){return function(){a.src=b}}(c,d)}}d(function(){c(b)})})(window)'>PlayDota2</a></p></li>
+                </p>
+            </li>
+            <li>Visit <a href="http://www.playdota.com/items" target="_blank">playdota.com</a> and click the bookmarklet to use it.</li>
+        </ol>
+        <p>* just Refresh the page to revert back to original DotA icons.</p>
+        </font>
+        </div>-->
+    </div>
 </body>
 </html>
