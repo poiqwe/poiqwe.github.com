@@ -48,7 +48,7 @@
 				thumb: 38,
 				icon: 64
 			},
-			template = '<table><tr><td style=\'vertical-align:top\'><img src=\'{0}\' class=\'tooltip\'/></td><td>{1}<br/>{2}</td></tr></table>',
+			template = '&lt;table&gt;&lt;tr&gt;&lt;td style=\'vertical-align:top\'&gt;&lt;img src=\'{0}\' class=\'tooltip\'/&gt;&lt;/td&gt;&lt;td&gt;{1}&lt;br/&gt;{2}&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;',
 			classes = ['http://i.imgur.com/y5iFD.png','http://i.imgur.com/NIAxG.png','http://i.imgur.com/lUNc4.png'],
 			category,key,type,
 			tooltip;
@@ -78,7 +78,7 @@
 					img.src = IMGUR + sub.imgur + EXTENSION;
 					
 					if (category == 'hero') args = [classes[sub.hclass-1],sub.name,sub.name2];
-					else args = [src,'<b>'+sub.name+'</b>','<img src=\'http://i.imgur.com/HHHUl.jpg\'/>'+sub.price+'<br/>'+sub.bonus];
+					else args = [src,'&lt;b&gt;'+sub.name+'&lt;/b&gt;','&lt;img src=\'http://i.imgur.com/HHHUl.jpg\'/&gt;'+sub.price+'&lt;br/&gt;'+sub.bonus];
 					
 					tooltip = $(document.createElement('div'));
 					tooltip
