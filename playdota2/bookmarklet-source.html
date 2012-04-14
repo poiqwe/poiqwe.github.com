@@ -15,7 +15,7 @@
         script.onload = script.onreadystatechange = function() {
             if (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') {
                 callback.call(unsafeWindow);
-                script.stopObserving('load');
+                script.onload = script.onreadystatechange = null;
                 script.remove();
             }
         }
