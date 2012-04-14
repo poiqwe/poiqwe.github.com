@@ -9,12 +9,11 @@
 (function(unsafeWindow){
     (function loadScript(callback){
         var head = $(document.getElementsByTagName('head')[0]),
-            script = $(document.createElement('script')),
-            loaded = false;
+            script = $(document.createElement('script'));
         script.type = 'text/javascript';
         script.src = 'http://poiqwe.github.com/playdota2/data.js';
         script.onload = script.onreadystatechange = function() {
-            if (!loaded && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+            if (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') {
                 callback.call(unsafeWindow);
                 script.stopObserving('load');
                 script.remove();
